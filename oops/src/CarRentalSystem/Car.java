@@ -1,12 +1,15 @@
 package CarRentalSystem;
 
+import java.util.UUID;
+
 class Car {
-    private String carId;
-    private String brand;
-    private String model;
-    private double basePricePerDay;
+    private final String carId;
+    private final String brand;
+    private final String model;
+    private final double basePricePerDay;
     private boolean isAvailable;
-    public Car(String carId,String brand,String model,double basePricePerDay)
+    UUID uuid=UUID.randomUUID();
+    public Car(String carId, String brand, String model, double basePricePerDay)
     {
         this.carId=carId;
         this.brand=brand;
@@ -26,6 +29,11 @@ class Car {
     public String getCarId() {
         return carId;
     }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
     public boolean isAvailable() {
         return isAvailable;
     }
@@ -39,4 +47,5 @@ class Car {
     public void returnCar() {
         isAvailable = true;
     }
+
 }
