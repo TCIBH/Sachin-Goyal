@@ -1,6 +1,8 @@
 package onlineShopingSystem;
-import java.util.UUID;
-  public class Product {
+
+import java.io.IOException;
+
+public class Product {
     private final String ProductId;
     private String name;
     private String description;
@@ -40,7 +42,7 @@ import java.util.UUID;
         this.price = price;
     }
 
-    public void setStockLevel(int stockLevel) {
+    public void setStockLevel(int stockLevel)throws IOException {
         this.stockLevel = stockLevel;
     }
     public boolean equals(Object obj){

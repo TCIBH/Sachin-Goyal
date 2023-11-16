@@ -17,7 +17,7 @@ public void addProduct(Product product){
         products.add(product);
 }
 
-    void menu() throws IOException {
+    void menu() throws Exception {
 
         Scanner scan=new Scanner(System.in);
         BufferedReader bfn = new BufferedReader(
@@ -194,13 +194,16 @@ choice=scan.nextInt();
                    System.out.println("total item in the cart is::");
                    System.out.println(shoppingCart.returnSize());
                    System.out.println();
+                   System.out.println("confirm payment(y/n): ");
+                   String confirm = bfn.readLine();
+                   if (confirm.equalsIgnoreCase("Y")){
+                       System.out.println("");
+                   }
                    break;
-
            }
         } while(choice!=5);
-
     }
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         MainClass main=new MainClass();
     Product p1=new Product("P001","Parle_g","new",20,100);
         Product p8=new Product("P002","head and shoulder","new",200,20);

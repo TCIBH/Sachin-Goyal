@@ -1,9 +1,6 @@
 package onlineShopingSystem;
-
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
-
 public class Admin {
     private Inventory inventory;
     private ArrayList<Product> products=new ArrayList<>();
@@ -16,13 +13,13 @@ public class Admin {
         void updateProduct(Product product){
         products.add(product);
     }
-    public void updateStock(Product  product,int stockLevel){
+    public void updateStock(Product  product,int stockLevel) throws IOException {
         int newStock=product.getStockLevel();
         newStock=newStock+stockLevel;
         product.setStockLevel(newStock);
         System.out.println("stock updated");
     }
-    public void  addOrder(Order order){
+    public void  addOrder(Order order) throws  Exception{
         orders.add(order);
         System.out.println("order added successfully");
     }
